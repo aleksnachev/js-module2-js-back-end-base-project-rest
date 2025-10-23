@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Posts SPA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Posts</h1>
+    <div id="auth-area">
+      <div id="guest-area">
+        <button id="show-login">Login</button>
+        <button id="show-register">Register</button>
+      </div>
+      <div id="user-area" class="hidden">
+        <span id="welcome"></span>
+        <button id="logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="list-view">
+      <div class="toolbar">
+        <button id="refresh">Refresh</button>
+        <button id="new-post" class="hidden">New Post</button>
+      </div>
+      <ul id="posts-list"></ul>
+    </section>
+
+    <section id="detail-view" class="hidden">
+      <button id="back">Back</button>
+      <h2 id="detail-title"></h2>
+      <p><strong>Author:</strong> <span id="detail-author"></span></p>
+      <p id="detail-content"></p>
+      <div id="detail-actions" class="hidden">
+        <button id="edit-post">Edit</button>
+        <button id="delete-post">Delete</button>
+      </div>
+    </section>
+
+    <section id="form-view" class="hidden">
+      <button id="cancel-form">Cancel</button>
+      <h2 id="form-title">New Post</h2>
+      <form id="post-form">
+        <label>Title<br><input name="title" required /></label>
+        <label>Content<br><textarea name="content" required></textarea></label>
+        <button type="submit">Save</button>
+      </form>
+    </section>
+
+    <section id="auth-forms" class="hidden">
+      <div id="login-form" class="hidden">
+        <h2>Login</h2>
+        <form id="form-login">
+          <label>Username<br><input name="username" required /></label>
+          <label>Password<br><input name="password" type="password" required /></label>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div id="register-form" class="hidden">
+        <h2>Register</h2>
+        <form id="form-register">
+          <label>Username<br><input name="username" required /></label>
+          <label>Password<br><input name="password" type="password" required /></label>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
